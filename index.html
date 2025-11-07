@@ -7,30 +7,72 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="/icons/favicon.ico">
     <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <!-- Fixed Header -->
     <header>
-        <button class="hamburger" onclick="toggleMenu()">☰</button>
-        <h1>Chatbot Testing</h1>
+        <div class="nav-container container">
+            <div class="logo">Chatbot<span>Test</span></div>
+
+            <!-- Hamburger Button (CSS-styled) -->
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Nav Menu -->
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="chat1.html">Chat</a></li>
+                <li><a href="chat2.html">Chat 2</a></li>
+            </ul>
+        </div>
     </header>
-    <nav id="nav-menu" class="nav-menu">
-        <button class="hamburger close-btn" onclick="toggleMenu()">☰</button>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="chat1.html">Chat</a></li>
-            <li><a href="chat2.html">Chat 2</a></li>
-        </ul>
-    </nav>
-   <main>
-    <p>Deployment by Aaron for the testing of chatbot versions</p>
-     
-    <p>Thi is not official IFSTA content</p>
-    
-    <p>If a page is not appearing on the nav menu, return to the home and check the main navigation.</p>
-    
-    <p>Each bot can be toggled via popup, implementation in progress.</p>
-</main>
-  
+
+    <!-- Overlay for mobile -->
+    <div class="nav-overlay" onclick="toggleMenu()"></div>
+
+    <main>
+        <div class="container">
+            <section class="hero">
+                <h1>Chatbot Testing</h1>
+                <p>Deployment by Aaron for the testing of chatbot versions</p>
+                <p>This is not official IFSTA content</p>
+                <p>If a page is not appearing on the nav menu, return to the home and check the main navigation.</p>
+                <p>Each bot can be toggled via popup, implementation in progress.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Chatbot Testing. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Menu Toggle -->
+    <script>
+        function toggleMenu() {
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            const overlay = document.querySelector('.nav-overlay');
+
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+
+        // Optional: Close menu when clicking a link (on mobile)
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    toggleMenu();
+                }
+            });
+        });
+    </script>
 </body>
-  
 </html>
