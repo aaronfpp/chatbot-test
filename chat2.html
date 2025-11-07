@@ -3,30 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat - Web Testing</title>
+    <title>Chat 2 – Testing</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="/icons/favicon.ico">
     <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
-    <script src="https://cdn.botpress.cloud/webchat/v3.0/inject.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <button class="hamburger" onclick="toggleMenu()">☰</button>
-        <h1>Chat2</h1>
-    </header>
-    <nav id="nav-menu" class="nav-menu">
-        <button class="hamburger close-btn" onclick="toggleMenu()">☰</button>
-        <ul>
+
+<header>
+    <div class="nav-container container">
+        <div class="logo">Chatbot<span>Test</span></div>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+
+        <ul class="nav-menu" id="nav-menu">
             <li><a href="index.html">Home</a></li>
-            <li><a href="chat1.html">Chat1</a></li>
-            <li><a href="chat2.html">Chat2</a></li>
+            <li><a href="chat1.html">Chat</a></li>
+            <li><a href="chat2.html" class="active">Chat 2</a></li>
         </ul>
-    </nav>
-    <main>
-        <p>testing</p>
-    </main>
+    </div>
+</header>
 
+<div class="nav-overlay" onclick="toggleMenu()"></div>
 
-  
+<main>
+    <div class="container">
+        <section class="hero">
+            <h1>Chat 2</h1>
+            <p>Live demo of the second chatbot version.</p>
+            <!-- Your chat UI goes here -->
+            <div style="margin-top:2rem; background:#111; padding:2rem; border-radius:8px;">
+                <p style="color:#aaa;">[Chatbot placeholder – replace with your iframe / script]</p>
+            </div>
+        </section>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <p>© 2025 Chatbot Testing. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    function toggleMenu() {
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu   = document.querySelector('.nav-menu');
+        const overlay   = document.querySelector('.nav-overlay');
+
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        overlay.classList.toggle('active');
+    }
+
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 768) toggleMenu();
+        });
+    });
+</script>
 </body>
 </html>
