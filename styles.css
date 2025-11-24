@@ -15,8 +15,8 @@ html {
 }
 
 body {
-  background-color: #fff;
-  color: #b12124;
+  background-color: #000;
+  color: #fff;
   line-height: 1.6;
   overflow-x: hidden;
   min-height: 100vh;
@@ -417,6 +417,96 @@ footer a:hover {
     margin-right: auto;
   }
 }
+
+/* Theme toggle overrides (minimal, non-invasive) */
+.theme-toggle-container {
+  text-align: center;
+  margin: 2rem 0 0 0;
+}
+
+/* Light mode (default site is mostly dark-themed already) */
+body.light-mode {
+  background-color: #ffffff;
+  color: #b12124;
+}
+
+/* Light-mode hero overrides — brighten hero area on pages when light mode is active */
+body.light-mode .hero {
+  background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+}
+
+body.light-mode .hero h1 {
+  /* use a readable black -> red gradient for headings in light mode */
+  background: linear-gradient(90deg, #111 0%, #b12124 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* fallback */
+}
+
+body.light-mode .hero p {
+  color: #333;
+}
+
+body.light-mode header {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid #eee;
+}
+
+body.light-mode .logo { color: #111; }
+body.light-mode .logo span { color: #b12124; }
+
+/* Lighten the inner hero placeholder on chat pages */
+body.light-mode .hero .chat-placeholder {
+  background: #f5f5f5 !important; /* override inline bg */
+  color: #222;
+}
+
+body.light-mode .hero .chat-placeholder p {
+  color: #333 !important;
+}
+
+/* Nav items: highlight red in light mode */
+body.light-mode .nav-menu li a {
+  color: #6b6b6b;
+}
+
+body.light-mode .nav-menu li a:hover {
+  color: #b12124;
+}
+
+body.light-mode .nav-menu li a.active {
+  color: #b12124;
+}
+
+body.light-mode .nav-menu li a.active::after,
+body.light-mode .nav-menu li a:hover::after {
+  background-color: #b12124;
+}
+
+/* Dark mode overrides */
+body.dark-mode {
+  background-color: #0b0b0b;
+  color: #ddd;
+}
+
+body.dark-mode header {
+  background-color: rgba(0, 0, 0, 0.98);
+}
+
+body.dark-mode .hero {
+  background: linear-gradient(135deg, #000 0%, #0b0b0b 100%);
+}
+
+body.dark-mode h1, body.dark-mode .card h3 {
+  color: #ffffff;
+}
+
+body.dark-mode p, body.dark-mode .card p {
+  color: #cfcfcf;
+}
+
+body.dark-mode .logo span { color: #ff6b6b; }
 
 /* Utility Classes */
 .text-red { color: #b12124; }

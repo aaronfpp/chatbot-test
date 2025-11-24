@@ -35,10 +35,15 @@
             <h1>Chat 2</h1>
             <p>Live demo of the second chatbot version.</p>
             <!-- Your chat UI goes here -->
-            <div style="margin-top:2rem; background:#111; padding:2rem; border-radius:8px;">
+            <div class="chat-placeholder" style="margin-top:2rem; background:#111; padding:2rem; border-radius:8px;">
                 <p style="color:#aaa;">enabled</p>
             </div>
         </section>
+
+            <!-- Theme toggle button (shared with index) -->
+            <div class="theme-toggle-container">
+                <button id="theme-toggle" class="btn" aria-pressed="false">Switch to dark mode</button>
+            </div>
     </div>
 </main>
 
@@ -77,6 +82,8 @@
 </script>
 <noscript>You need to <a href="https://www.chatbot.com/help/chat-widget/enable-javascript-in-your-browser/" rel="noopener nofollow">enable JavaScript</a> in order to use the AI chatbot tool powered by <a href="https://www.chatbot.com/" rel="noopener nofollow" target="_blank">ChatBot</a></noscript>
 <!-- End of ChatBot code -->
-
+</script>
+    <script src="scripts/theme-toggle.js"></script>
 </body>
 </html>
+
